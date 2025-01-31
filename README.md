@@ -1,21 +1,17 @@
-Para descartar cambios locales:
-git checkout -- instituto/models/nombre-de-la-clase.py
+1. DESCARTAR CAMBIOS LOCALES:
+  git checkout -- instituto/models/nombre-de-la-clase.py
 
-Crear rama y colocarse en ella:
-git checkout -b nombre-de-la-rama
-git switch -c nombre-de-la-rama
+2. CREAR RAMA Y COLOCARSE EN ELLA (DOS OPCIONES):
+  git checkout -b nombre-de-la-rama // git switch -c nombre-de-la-rama
 
-Cambiar de rama:
-git switch nombre-de-la-rama
+3. CAMBIAR DE RAMA:
+  git switch nombre-de-la-rama
 
-Para eliminar una rama:
-git push origin --delete nombre-de-la-rama
+4. ELIMINAR UNA RAMA EN GITHUB:
+  git push origin --delete nombre-de-la-rama
 
-Subir la rama al GitHub:
-git push -u origin rama1
+5. SUBIR LA RAMA A GITHUB:
+  git push -u origin rama1
 
-Eliminar la rama github:
-git push origin --delete nombre-de-la-rama
-
-Eliminar rama local:
-git branch -d nombre-de-la-rama
+6. ELIMINAR RAMA LOCAL:
+  git branch -d nombre-de-la-rama
