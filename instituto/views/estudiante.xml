@@ -1,0 +1,63 @@
+<odoo>
+  <data>
+    <record id="instituto_estudiante_tree" model="ir.ui.view">
+      <field name="name">instituto.estudiante.tree</field>
+      <field name="model">instituto.estudiante</field>
+      <field name="arch" type="xml">
+          <tree>
+              <field name="name"/>
+              <field name="nombre"/>
+              <field name="apellido"/>
+          </tree>
+      </field>
+    </record>
+
+ 
+
+    <record id="estudiante_form" model="ir.ui.view">
+      <field name="name">instituto.estudiante.form</field>
+      <field name="model">instituto.estudiante</field>
+      <field name="arch" type="xml">
+          <form>
+              <sheet >
+                    <group name="group_top" >
+                      <group name="group_left" >
+                          <field name="name"/>
+                          <field name="nombre"/>
+                          <field name="apellido" />
+                          <field name="fechaNac" />
+                          <field name="direccion" />                            
+                          <field name="telefono"/>
+                          <field name="email" />
+                          <field name="asignatura" />
+                          <field name="grupo" />
+                          <field name="curso" />
+                      </group>
+                      <group name="group_right">
+                            <field name="foto" attrs="{'invisible': True}"/>
+                            <field name="fotoAlumno" attrs="{'invisible': [('foto', '=', True)]}" placeholder="Introduce la URL de la imagen..."/>
+                            <field name="fotoAlumno" widget="image_url" attrs="{'invisible': [('foto', '=', False)]}"/>
+                      </group>
+                  </group>                                  
+              </sheet>
+          </form> 
+        </field>
+    </record>
+
+
+
+    <record model="ir.actions.act_window" id="estudiante_action_window">
+        <field name="name">estudiante</field>
+        <field name="res_model">instituto.estudiante</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                estudiante
+            </p>
+            <p>
+                Click 'Crear' para añadir nuevos elementos.
+            </p>
+        </field>
+    </record>
+  </data>
+</odoo>
