@@ -27,11 +27,41 @@
                           <field name="apellido" />
                           <field name="fechaNac" />
                           <field name="direccion" />                            
-                          <field name="telefono"/>
-                          <field name="email" />
-                          <field name="asignatura" />
+                          <field name="telefono" widget="phone"/>
+                          <field name="email" widget="email"/>
+                          <field name="asignatura">
+                             <kanban>
+                                <templates>
+                                    <t t-name="kanban-box">
+                                        <div class="oe_kanban_global_click">
+                                            <div class="o_kanban_record_title">
+                                                <field name="name"/>
+                                                <div>
+                                                    <field name="curso"/>
+                                                </div>
+                                            </div>  
+                                        </div>                 
+                                    </t>
+                                </templates>
+                            </kanban>
+                          </field>
+                          <field name="calificaciones">
+                            <kanban>
+                                    <templates>
+                                        <t t-name="kanban-box">
+                                            <div class="oe_kanban_global_click">
+                                                <div class="o_kanban_record_title">
+                                                    <field name="asignatura"/>
+                                                    <div>
+                                                        <field name="name"/>
+                                                    </div>
+                                                </div>  
+                                            </div>                 
+                                        </t>
+                                    </templates>
+                                </kanban>
+                          </field>
                           <field name="grupo" />
-                          <field name="curso" />
                       </group>
                       <group name="group_right">
                             <field name="foto" attrs="{'invisible': True}"/>

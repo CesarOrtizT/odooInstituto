@@ -28,10 +28,10 @@ class estudiante(models.Model):
 
     grupo = fields.Many2one("instituto.grupo", string="Grupo")
 
-    curso = fields.Many2one("instituto.curso", string="Curso")
-
 
     @api.depends('fotoAlumno')
     def _compute_foto(self):
         for record in self:
-            record.foto = True if record.fotoAlumno else False
+            record.foto = True if record.fotoAlumno else False  
+
+    ## 
