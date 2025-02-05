@@ -27,11 +27,6 @@ class profesor(models.Model):
 
 
 
-
-# OTRO COMENTARIO RANDOM
-
-
-
     @api.depends('fotoProfesor')
     def _compute_foto(self):
         for record in self:
