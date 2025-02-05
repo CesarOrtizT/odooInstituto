@@ -24,7 +24,14 @@ class profesor(models.Model):
       
     especialidad = fields.Char(string = "Especialidad", required = True)
 
-# Añadido un comentario random
+
+
+
+
+
+
+
+
     @api.depends('fotoProfesor')
     def _compute_foto(self):
         for record in self:
