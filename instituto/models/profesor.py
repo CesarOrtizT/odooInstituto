@@ -29,4 +29,8 @@ class profesor(models.Model):
     def _compute_foto(self):
         for record in self:
             record.foto = True if record.fotoProfesor else False
+
+
+
+# AÑADIDO UN COMENTARIO JODIDAMENTE RANDOM
     
