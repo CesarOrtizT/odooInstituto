@@ -31,7 +31,6 @@
                           <field name="email" />
                           <field name="asignatura" />
                           <field name="grupo" />
-                          <field name="curso" />
                       </group>
                       <group name="group_right">
                             <field name="foto" attrs="{'invisible': True}"/>

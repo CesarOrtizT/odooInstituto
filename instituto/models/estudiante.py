@@ -24,11 +24,9 @@ class estudiante(models.Model):
     
     asignatura = fields.Many2many("instituto.asignatura", string="Asignaturas")
     
-    calificaciones = fields.One2many("instituto.calificacion", "estudiantes", string="Calificaciones")
+    calificaciones = fields.One2many("instituto.calificacion", "estudiante", string="Calificaciones")
 
     grupo = fields.Many2one("instituto.grupo", string="Grupo")
-
-    curso = fields.Many2one("instituto.curso", string="Curso")
 
 
     @api.depends('fotoAlumno')

@@ -6,6 +6,6 @@ class calificacion(models.Model):
 
     name = fields.Float(string="Nota", required=True)
 
-    estudiantes = fields.Many2one("instituto.estudiante", string="Estudiante", required=True)
+    estudiante = fields.Many2one("instituto.estudiante", string="Estudiante", required=True)
 
     asignatura = fields.Many2one("instituto.asignatura", string="Asignatura", required=True)

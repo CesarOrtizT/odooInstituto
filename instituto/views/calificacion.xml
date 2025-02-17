@@ -5,7 +5,7 @@
       <field name="model">instituto.calificacion</field>
       <field name="arch" type="xml">
           <tree>
-              <field name="estudiantes"/>
+              <field name="estudiante"/>
               <field name="asignatura"/>
               <field name="name"/>
           </tree>
@@ -25,7 +25,7 @@
                           <field name="name"/>
                       </group>
                       <group name="group_left" string="Corresponsal">
-                          <field name="estudiantes"/>
+                          <field name="estudiante"/>
                           <field name="asignatura"/>
                       </group>
                   </group>                                  
