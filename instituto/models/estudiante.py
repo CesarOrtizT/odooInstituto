@@ -77,3 +77,5 @@ class estudiante(models.Model):
         for record in self:
             if record.fechaNac and record.fechaNac > date.today():
                 raise ValidationError('La fecha de nacimiento no puede ser posterior a la actual.')
+            
+

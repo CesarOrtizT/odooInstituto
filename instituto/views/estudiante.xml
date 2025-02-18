@@ -20,19 +20,22 @@
           <form>
               <sheet >
                     <group name="group_top" string="Estudiante">
+                      <group name="group_left" string="Foto">
                           <field name="foto" attrs="{'invisible': True}" style="max-width: 100px; max-height: 100px; object-fit: cover;"/>
                           <field name="fotoAlumno" attrs="{'invisible': [('foto', '=', True)]}" placeholder="Introduce la URL de la imagen..."/>
                           <field name="fotoAlumno" widget="image_url" attrs="{'invisible': [('foto', '=', False)]}"/>
-                      <group name="group_left" string="Datos personales">
+                      </group>
+                      <group name="group_right" string="Datos del alumno">
                           <field name="name"/>
                           <field name="nombre"/>
                           <field name="apellido" />
                           <field name="fechaNac" />
                           <field name="direccion" />                            
-                          <field name="telefono"/>
-                          <field name="email" />
+                          <field name="telefono" widget="phone"/>
+                          <field name="email" widget="email"/>
                       </group>
-                      <group name="group_right" string="Asignaciones">
+                      <group name="group_left" string="Asignaciones">
+                          <field name="grupo"/>
                           <field name="asignatura">
                             <kanban>
                                 <templates>
@@ -45,7 +48,22 @@
                                 </templates>
                             </kanban>
                           </field>
-                          <field name="grupo" />
+                      </group>
+                      <group name="group_right" string="Calificaciones">
+                          <field name="calificaciones">
+                            <kanban>
+                                <templates>
+                                    <t t-name="kanban-box">
+                                        <div class="oe_kanban_global_click">
+                                            <field name="asignatura"/>
+                                        </div>
+                                        <div class="oe_kanban_global_click">
+                                            <field name="name"/>
+                                        </div>
+                                    </t>
+                                </templates>
+                            </kanban>
+                          </field>
                       </group>
                   </group>                                  
               </sheet>
