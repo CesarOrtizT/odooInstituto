@@ -1,0 +1,8 @@
+.kanban_card {
+    background-color: #7891a3;
+    border: 10px solid #05111b;
+    border-radius: 10px;
+    padding: 1px;
+    margin: 8px;
+    transition: transform 0.2s;
+}

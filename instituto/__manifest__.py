@@ -40,4 +40,11 @@
     'demo': [
         'demo/demo.xml',
     ],
+
+    'assets': {
+    'web.assets_backend': [
+        'instituto/static/src/css/styles.css',
+    ],
+},
+
 }

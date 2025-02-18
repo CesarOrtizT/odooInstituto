@@ -12,7 +12,6 @@
       </field>
     </record>
 
- 
 
     <record id="estudiante_form" model="ir.ui.view">
       <field name="name">instituto.estudiante.form</field>
@@ -20,8 +19,11 @@
       <field name="arch" type="xml">
           <form>
               <sheet >
-                    <group name="group_top" >
-                      <group name="group_left" >
+                    <group name="group_top" string="Estudiante">
+                          <field name="foto" attrs="{'invisible': True}" style="max-width: 100px; max-height: 100px; object-fit: cover;"/>
+                          <field name="fotoAlumno" attrs="{'invisible': [('foto', '=', True)]}" placeholder="Introduce la URL de la imagen..."/>
+                          <field name="fotoAlumno" widget="image_url" attrs="{'invisible': [('foto', '=', False)]}"/>
+                      <group name="group_left" string="Datos personales">
                           <field name="name"/>
                           <field name="nombre"/>
                           <field name="apellido" />
@@ -29,13 +31,21 @@
                           <field name="direccion" />                            
                           <field name="telefono"/>
                           <field name="email" />
-                          <field name="asignatura" />
-                          <field name="grupo" />
                       </group>
-                      <group name="group_right">
-                            <field name="foto" attrs="{'invisible': True}"/>
-                            <field name="fotoAlumno" attrs="{'invisible': [('foto', '=', True)]}" placeholder="Introduce la URL de la imagen..."/>
-                            <field name="fotoAlumno" widget="image_url" attrs="{'invisible': [('foto', '=', False)]}"/>
+                      <group name="group_right" string="Asignaciones">
+                          <field name="asignatura">
+                            <kanban>
+                                <templates>
+                                    <t t-name="kanban-box">
+                                        <div class="oe_kanban_global_click">
+                                            <field name="name"/>
+                                            <field name="curso"/>
+                                        </div>
+                                    </t>
+                                </templates>
+                            </kanban>
+                          </field>
+                          <field name="grupo" />
                       </group>
                   </group>                                  
               </sheet>
@@ -45,18 +55,46 @@
 
 
 
+    <record id="instituto_estudiante_kanban" model="ir.ui.view">
+    <field name="name">instituto.estudiante.kanban</field>
+    <field name="model">instituto.estudiante</field>
+    <field name="arch" type="xml">
+        <kanban>
+            <templates>
+                <t t-name="kanban-box">
+                    <div class="o_kanban_record oe_kanban_global_click">
+                        <div class="o_kanban_content">
+                            <strong>
+                                <field name="name"/>
+                            </strong>
+                            <div>
+                                <field name="nombre"/>
+                            </div>
+                            <div>
+                                <field name="apellido"/>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </templates>
+        </kanban>
+    </field>
+    </record>
+
+
+
     <record model="ir.actions.act_window" id="estudiante_action_window">
-        <field name="name">estudiante</field>
-        <field name="res_model">instituto.estudiante</field>
-        <field name="view_mode">tree,form</field>
-        <field name="help" type="html">
-            <p class="oe_view_nocontent_create">
-                estudiante
-            </p>
-            <p>
-                Click 'Crear' para añadir nuevos elementos.
-            </p>
-        </field>
+    <field name="name">estudiante</field>
+    <field name="res_model">instituto.estudiante</field>
+    <field name="view_mode">kanban,tree,form</field>
+    <field name="help" type="html">
+        <p class="oe_view_nocontent_create">
+            estudiante
+        </p>
+        <p>
+            Click 'Crear' para añadir nuevos elementos.
+        </p>
+    </field>
     </record>
   </data>
 </odoo>
