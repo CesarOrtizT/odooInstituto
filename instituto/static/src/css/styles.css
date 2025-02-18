@@ -20,13 +20,13 @@
 }
 
 .kanban_bg {
-    background-color: #e9f2ff;
+    background-color: #f8efd3;
     border-radius: 10px; 
     padding: 10px;
 }
 
 .kanban_record {
-    background-color: #ffffff; 
+    background-color: #e9f2ff; 
     border: 1px solid #ccc; 
     border-radius: 8px; 
     margin-bottom: 10px; 
@@ -36,7 +36,8 @@
 }
 
 .kanban_record:hover {
-    transform: translateY(-5px); 
+    transform: translateY(-10px); 
+    background-color: #b9d6ff;
 }
 
 .kanban_record .kanban_title {
