@@ -34,6 +34,7 @@
                           <field name="telefono" class="letter" widget="phone"/>
                           <field name="email" class="letter" widget="email"/>
                       </group>
+
                       <group name="group_left" string="Asignaciones">
                           <field name="grupo"/>
                           <field name="asignatura">
