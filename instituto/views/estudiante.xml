@@ -18,7 +18,7 @@
       <field name="model">instituto.estudiante</field>
       <field name="arch" type="xml">
           <form>
-              <sheet >
+              <sheet>
                     <group name="group_top" string="Estudiante">
                       <group name="group_left" string="Foto">
                           <field name="foto" attrs="{'invisible': True}" style="max-width: 100px; max-height: 100px; object-fit: cover;"/>
@@ -26,13 +26,13 @@
                           <field name="fotoAlumno" widget="image_url" attrs="{'invisible': [('foto', '=', False)]}"/>
                       </group>
                       <group name="group_right" string="Datos del alumno">
-                          <field name="name"/>
-                          <field name="nombre"/>
-                          <field name="apellido" />
-                          <field name="fechaNac" />
-                          <field name="direccion" />                            
-                          <field name="telefono" widget="phone"/>
-                          <field name="email" widget="email"/>
+                          <field name="name" class="letter"/>
+                          <field name="nombre" class="letter"/>
+                          <field name="apellido" class="letter"/>
+                          <field name="fechaNac" class="letter"/>
+                          <field name="direccion" class="letter"/>                            
+                          <field name="telefono" class="letter" widget="phone"/>
+                          <field name="email" class="letter" widget="email"/>
                       </group>
                       <group name="group_left" string="Asignaciones">
                           <field name="grupo"/>

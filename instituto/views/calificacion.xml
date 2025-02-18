@@ -22,11 +22,11 @@
               <sheet >
                     <group name="group_top" string="Calificación">
                       <group name="group_right" string="Nota" >
-                          <field name="name"/>
+                          <field name="name" class="letter"/>
                       </group>
                       <group name="group_left" string="Alumno">
-                          <field name="estudiante"/>
-                          <field name="asignatura"/>
+                          <field name="estudiante" class="letter"/>
+                          <field name="asignatura" class="letter"/>
                       </group>
                   </group>                                  
               </sheet>

@@ -25,13 +25,13 @@
                     <sheet>
                         <group name="group_top" string="Profesor">
                             <group name="group_left" string="Datos">
-                                <field name="name"/>
-                                <field name="nombre"/>
-                                <field name="apellido"/>
-                                <field name="fechaNac"/>
-                                <field name="direccion"/>
-                                <field name="telefono"/>
-                                <field name="especialidad"/>
+                                <field name="name" class="letter"/>
+                                <field name="nombre" class="letter"/>
+                                <field name="apellido" class="letter"/>
+                                <field name="fechaNac" class="letter"/>
+                                <field name="direccion" class="letter"/>
+                                <field name="telefono" class="letter"/>
+                                <field name="especialidad" class="letter"/>
                                 
                             </group>
                             <group name="group_right" string="Imagen">

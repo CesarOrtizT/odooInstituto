@@ -21,8 +21,8 @@
             <sheet>
                 <group name="group_top" string="Informacion sobre asignatura">
                     <group name="group_left">
-                        <field name="name"/>
-                        <field name="curso"/>
+                        <field name="name" class="letter"/>
+                        <field name="curso" class="letter"/>
                         <field name="estudiantes"/>
                         
                     </group>

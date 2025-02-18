@@ -23,10 +23,10 @@
               <sheet >
                     <group name="group_top" string="Grupo">
                       <group name="group_left" string="Datos">
-                          <field name="name"/>
-                          <field name="tutor"/>
-                          <field name="anio"/>
-                          <field name="curso"/>
+                          <field name="name" class="letter"/>
+                          <field name="tutor" class="letter"/>
+                          <field name="anio" class="letter"/>
+                          <field name="curso" class="letter"/>
                       </group>
                       <group name="group_right" string="Listado de estudiantes">
                            <field name="estudiantes"/>
