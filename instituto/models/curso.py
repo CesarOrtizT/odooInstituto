@@ -13,5 +13,6 @@ class curso(models.Model):
     @api.constrains('name')
     def _check_name(self):
         for record in self:
-            if(record.name != record.grupos.curso):
-                raise ValidationError("No puede ser el número del curso distinto al del grupo.")
+            for grupo in record.grupos:
+                if (grupo.curso != record.name):
+                    raise ValidationError("No puede ser el número del curso distinto al del grupo.")
