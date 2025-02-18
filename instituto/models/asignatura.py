@@ -7,13 +7,13 @@ class asignatura(models.Model):
      _name = 'instituto.asignatura'
      _description = 'instituto.asignatura'
 
-     name = fields.Char(string = "Nombre", required = True)
-     # grupo = fields.Many2one()
+     name = fields.Char(string="Nombre", required=True)
      curso = fields.Many2one("instituto.curso", string="Curso", required=True)
-     estudiantes = fields.Many2many("instituto.estudiante", string="Estudiante", required=True)
+     estudiantes = fields.Many2many("instituto.estudiante", string="Estudiantes", required=True)
      
-#
-#     @api.depends('value')
-#     def _value_pc(self):
-#         for record in self:
-#             record.value2 = float(record.value) / 100
+     def name_get(self):
+        result = []
+        for record in self:
+            name = f"{record.name} ({record.curso.name})" if record.curso else record.name
+            result.append((record.id, name))
+        return result
