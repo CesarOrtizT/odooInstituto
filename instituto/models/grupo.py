@@ -22,3 +22,15 @@ class grupo(models.Model):
         for record in self:
             if (record.name and len(record.name) > 1 ):
                     raise ValidationError("¡El grupo no puede contener más de una letra como identificador!")
+
+    @api.constrains('estudiantes', 'anio')
+    def _check_estudiante_unico_por_anio(self):
+        for record in self:
+            for estudiante in record.estudiantes:
+                grupos_con_mismo_estudiante = self.env['instituto.grupo'].search([
+                    ('id', '!=', record.id),  
+                    ('anio', '=', record.anio),  
+                    ('estudiantes', 'in', estudiante.id)  
+                ])
+                if grupos_con_mismo_estudiante:
+                    raise ValidationError(f"El estudiante {estudiante.name} ya está en otro grupo en el año {record.anio}.")

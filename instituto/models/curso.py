@@ -6,7 +6,7 @@ class curso(models.Model):
     _description = 'Curso'
     
     name = fields.Integer(string="Número del curso", required=True)
-    grupos = fields.Many2many("instituto.grupo", string="Grupos", domain="[('curso', '=', id)]")  # Filtra solo grupos del curso correcto
+    grupos = fields.Many2many("instituto.grupo", string="Grupos", domain="[('curso', '=', id)]") 
 
     @api.constrains('grupos')
     def _check_grupos_curso(self):
