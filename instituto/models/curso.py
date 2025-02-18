@@ -5,14 +5,12 @@ class curso(models.Model):
     _name = 'instituto.curso'
     _description = 'Curso'
     
-    name = fields.Integer(string="Número del curso", required = True)
+    name = fields.Integer(string="Número del curso", required=True)
+    grupos = fields.Many2many("instituto.grupo", string="Grupos", domain="[('curso', '=', id)]")  # Filtra solo grupos del curso correcto
 
-    grupos = fields.Many2many("instituto.grupo", string="Grupos")
-     
-    
-    @api.constrains('name')
-    def _check_name(self):
+    @api.constrains('grupos')
+    def _check_grupos_curso(self):
         for record in self:
             for grupo in record.grupos:
-                if (grupo.curso != record.name):
-                    raise ValidationError("No puede ser el número del curso distinto al del grupo.")
+                if grupo.curso.id != record.id:
+                    raise ValidationError(f"El grupo {grupo.name} pertenece a un curso diferente ({grupo.curso.name}).")
