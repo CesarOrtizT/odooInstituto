@@ -19,7 +19,7 @@
       <field name="model">instituto.calificacion</field>
       <field name="arch" type="xml">
           <form>
-              <sheet >
+              <sheet>
                     <group name="group_top" string="Calificación">
                       <group name="group_right" string="Nota" >
                           <field name="name" class="letter"/>
@@ -34,37 +34,11 @@
         </field>
     </record>
 
-    <record id="instituto_calificacion_kanban" model="ir.ui.view">
-    <field name="name">instituto.calificacion.kanban</field>
-    <field name="model">instituto.calificacion</field>
-    <field name="arch" type="xml">
-        <kanban>
-            <templates>
-                <t t-name="kanban-box">
-                    <div class="o_kanban_record oe_kanban_global_click">
-                        <div class="o_kanban_content">
-                            <strong>
-                                <field name="estudiante"/>
-                            </strong>
-                            <div>
-                                <field name="asignatura"/>
-                            </div>
-                            <div>
-                                <field name="name"/>
-                            </div>
-                        </div>
-                    </div>
-                </t>
-            </templates>
-        </kanban>
-    </field>
-    </record>
-
-
+    
     <record model="ir.actions.act_window" id="calificacion_action_window">
         <field name="name">calificacion</field>
         <field name="res_model">instituto.calificacion</field>
-        <field name="view_mode">kanban,tree,form</field>
+        <field name="view_mode">tree,form</field>
         <field name="help" type="html">
             <p class="oe_view_nocontent_create">
                 calificacion

@@ -78,23 +78,26 @@
     <field name="name">instituto.estudiante.kanban</field>
     <field name="model">instituto.estudiante</field>
     <field name="arch" type="xml">
-        <kanban>
+        <kanban class="kanban_bg">
             <templates>
                 <t t-name="kanban-box">
-                    <div class="o_kanban_record oe_kanban_global_click">
-                        <div class="o_kanban_content">
-                            <field name="foto" attrs="{'invisible': True}" style="max-width: 30px; max-height: 30px; object-fit: cover;"/>
-                            <field name="fotoAlumno" attrs="{'invisible': [('foto', '=', True)]}" placeholder="Introduce la URL de la imagen..."/>
-                            <field name="fotoAlumno" widget="image_url" attrs="{'invisible': [('foto', '=', False)]}"/>
-                            <strong>
-                                <field name="name"/>
-                            </strong>
-                            <div>
-                                <field name="nombre"/>
+                    <div class="o_kanban_record oe_kanban_global_click" style="background-color: rgba(0,0,0,0); border-color: rgba(0,0,0,0)">
+                        <div class="o_kanban_content" style="background-color: rgba(0,0,0,0); border-color: rgba(0,0,0,0)">
+                            <div class="kanban_record">
+                                <field name="foto" attrs="{'invisible': True}" style="max-width: 30px; max-height: 30px; object-fit: cover;"/>
+                                <field name="fotoAlumno" attrs="{'invisible': [('foto', '=', True)]}" placeholder="Introduce la URL de la imagen..."/>
+                                <field name="fotoAlumno" widget="image_url" attrs="{'invisible': [('foto', '=', False)]}"/>
+                                <strong>
+                                    <field name="name"/>
+                                </strong>
+                                <div>
+                                    <field name="nombre"/>
+                                </div>
+                                <div>
+                                    <field name="apellido"/>
+                                </div>
                             </div>
-                            <div>
-                                <field name="apellido"/>
-                            </div>
+                            
                         </div>
                     </div>
                 </t>
