@@ -9,7 +9,7 @@ class asignatura(models.Model):
 
      name = fields.Char(string="Nombre", required=True)
      curso = fields.Many2one("instituto.curso", string="Curso", required=True)
-     estudiantes = fields.Many2many("instituto.estudiante", string="Estudiantes", required=True)
+     estudiantes = fields.Many2many("instituto.estudiante", string="Estudiantes", required=True, readonly=True)
      
      def name_get(self):
         result = []

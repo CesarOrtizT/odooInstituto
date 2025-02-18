@@ -34,3 +34,10 @@ class grupo(models.Model):
                 ])
                 if grupos_con_mismo_estudiante:
                     raise ValidationError(f"El estudiante {estudiante.name} ya está en otro grupo en el año {record.anio}.")
+                
+    def name_get(self):
+        result = []
+        for group in self:
+            name = f"{group.curso.name if group.curso else 'Sin curso'} - {group.name}"
+            result.append((group.id, name))
+        return result
