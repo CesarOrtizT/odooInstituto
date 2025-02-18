@@ -29,9 +29,9 @@
                         <field name="grupo" domain="[('curso', '=', curso)]"/>
                     </group>
                     <group name="group_right">
-                        <field name="dia_semana" widget="float_time" class="letter"/>
+                        <field name="dia_semana" class="letter"/>
                         <field name="hora_inicio" widget="float_time" class="letter"/>
-                        <field name="hora_fin" class="letter"/>
+                        <field name="hora_fin" widget="float_time" class="letter"/>
                     </group>
                 </group>
             </sheet>

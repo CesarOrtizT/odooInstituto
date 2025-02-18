@@ -21,7 +21,7 @@ class horario(models.Model):
      curso = fields.Many2one("instituto.curso", string="Curso", related="asignatura.curso", store=True, readonly=True)
      grupo = fields.Many2one("instituto.grupo",string = "Grupo",required = True)
      hora_inicio = fields.Float(string="Hora de inicio", required = True)
-     hora_fin = fields.Float(string="Hora de inicio", required = True)
+     hora_fin = fields.Float(string="Hora final", required = True)
 
 
 
