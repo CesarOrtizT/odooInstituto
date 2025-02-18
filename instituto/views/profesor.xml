@@ -45,10 +45,41 @@
             </field>
         </record>
 
+        <record id="instituto_profesor_kanban" model="ir.ui.view">
+        <field name="name">instituto.profesor.kanban</field>
+        <field name="model">instituto.profesor</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="o_kanban_record oe_kanban_global_click">
+                            <div class="o_kanban_content">
+                                <div>
+                                    <field name="foto" attrs="{'invisible': True}"/>
+                                    <field name="fotoProfesor" attrs="{'invisible': [('foto', '=', True)]}" placeholder="Introduce la URL de la imagen..."/>
+                                    <field name="fotoProfesor" widget="image_url" attrs="{'invisible': [('foto', '=', False)]}"/>
+                                    <strong>
+                                        <field name="name"/>
+                                    </strong>
+                                    <div>
+                                        <field name="nombre"/>
+                                    </div>
+                                    <div>
+                                        <field name="apellido"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+        </record>
+
         <record model="ir.actions.act_window" id="profesor_action_window">
         <field name="name">profesor</field>
         <field name="res_model">instituto.profesor</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">kanban,tree,form</field>
         <field name="help" type="html">
             <p class="oe_view_nocontent_create">
                 profesor
