@@ -19,7 +19,7 @@ class estudiante(models.Model):
     
     telefono = fields.Char(string="Teléfono", required = True)
     
-    foto = fields.Image(string="Imagen", compute="_compute_foto") 
+    foto = fields.Boolean(string="Imagen", compute="_compute_foto") 
     
     fotoAlumno = fields.Char(string="Image URL")
 

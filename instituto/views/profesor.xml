@@ -55,7 +55,7 @@
                         <div class="o_kanban_record oe_kanban_global_click">
                             <div class="o_kanban_content">
                                 <div>
-                                    <field name="foto" attrs="{'invisible': True}"/>
+                                    <field name="foto" attrs="{'invisible': True}" style="width: 10px; height: 10px; object-fit: cover;"/>
                                     <field name="fotoProfesor" attrs="{'invisible': [('foto', '=', True)]}" placeholder="Introduce la URL de la imagen..."/>
                                     <field name="fotoProfesor" widget="image_url" attrs="{'invisible': [('foto', '=', False)]}"/>
                                     <strong>
