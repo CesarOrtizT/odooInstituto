@@ -16,8 +16,6 @@ class profesor(models.Model):
     
     telefono = fields.Char(string = "Teléfono", required = True)
     
-    # Hacer un widget para que la imagen se muestre en el formulario
-    
     fotoProfesor = fields.Char(string="Image URL")
 
     foto = fields.Boolean(string="Is Image URL Set", compute="_compute_foto")
@@ -31,8 +29,4 @@ class profesor(models.Model):
     def _compute_foto(self):
         for record in self:
             record.foto = True if record.fotoProfesor else False
-
-
-
-# AÑADIDO UN COMENTARIO JODIDAMENTE RANDOM
     
