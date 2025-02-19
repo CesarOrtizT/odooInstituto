@@ -1,12 +1,3 @@
-.kanban_card {
-    background-color: #7891a3;
-    border: 10px solid #05111b;
-    border-radius: 10px;
-    padding: 1px;
-    margin: 8px;
-    transition: transform 0.2s;
-}
-
 .letter{
     font-family: 'Arial', sans-serif;
     font-size: 16px; 
@@ -38,44 +29,4 @@
 .kanban_record:hover {
     transform: translateY(-10px); 
     background-color: #b9d6ff;
-}
-
-.kanban_record .kanban_title {
-    font-weight: bold; 
-    color: #0066cc; 
-    font-size: 18px; 
-    margin-bottom: 10px; 
-}
-
-.kanban_record .kanban_content {
-    color: #333; 
-    font-size: 14px; 
-    line-height: 1.5; 
-}
-
-.kanban_record .kanban_label {
-    display: inline-block;
-    background-color: #0066cc;
-    color: white; 
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 12px;
-    margin-top: 5px; 
-}
-
-.kanban_header {
-    background-color: #0066cc; 
-    color: white; 
-    padding: 10px;
-    font-weight: bold; 
-    text-align: center;
-    border-radius: 8px 8px 0 0;
-}
-
-
-.kanban_column {
-    border-radius: 8px; 
-    padding: 10px; 
-    background-color: #f4f8ff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
