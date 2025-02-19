@@ -5,8 +5,7 @@ class grupo(models.Model):
     _name = 'instituto.grupo'
     _descripcion = 'instituto.grupo'
 
-    name = fields.Char(string="Grupo", required=True) #Añadir una restricción para que solo se añada 
-    #una letra al campo
+    name = fields.Char(string="Grupo", required=True)
 
     tutor = fields.Many2one("instituto.profesor", string="Tutor")
 
@@ -37,7 +36,7 @@ class grupo(models.Model):
                 
     def name_get(self):
         result = []
-        for group in self:
-            name = f"{group.curso.name if group.curso else 'Sin curso'} - {group.name}"
-            result.append((group.id, name))
+        for grupo in self:
+            name = f"{grupo.curso.name if grupo.curso else 'Sin curso'} - {grupo.name}"
+            result.append((grupo.id, name))
         return result

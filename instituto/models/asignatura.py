@@ -14,6 +14,6 @@ class asignatura(models.Model):
      def name_get(self):
         result = []
         for record in self:
-            name = f"{record.name} ({record.curso.name})" if record.curso else record.name
+            name = f"{record.name} ({record.curso.name}º curso)" if record.curso else record.name
             result.append((record.id, name))
         return result

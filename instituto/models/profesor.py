@@ -19,7 +19,7 @@ class profesor(models.Model):
     telefono = fields.Char(string = "Teléfono", required = True)
     
     fotoProfesor = fields.Char(string="Image URL")
-
+    
     foto = fields.Boolean(string="Is Image URL Set", compute="_compute_foto")
       
     especialidad = fields.Char(string = "Especialidad", required = True)

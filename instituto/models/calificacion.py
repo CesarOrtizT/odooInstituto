@@ -36,5 +36,5 @@ class Calificacion(models.Model):
     @api.constrains('name')
     def _comprobar_nota_maxima(self):
         for record in self:
-            if record.name > 10:
-                raise ValidationError("La nota no puede ser superior a 10.")
+            if record.name > 10 or record.name < 0:
+                raise ValidationError("La nota no puede ser superior a 10 o menor que 0.")
